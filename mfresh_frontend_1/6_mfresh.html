@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <h3>页头部分</h3>
+    <router-link to="/">首页</router-link>
+    <router-link to="/news">新闻</router-link>
+    <router-link to="/product">产品</router-link>
+    <hr>
+    <router-view></router-view>
+    <hr>
+    <h3>页尾部分</h3>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+  //1声明使用vue-router插件
+  Vue.use(VueRouter);
+
+  var routerIndex = {
+    template: '<h2>这里是首页</h2>'
+  }
+  var routerNews = {
+    template: '<h2>这里是新闻列表</h2>'
+  }
+  var routerProduct = {
+    template: '<h2>这里是产品列表</h2>'
+  }
+  //2声明路由表
+  var routeList = [
+    {path: '/', component: routerIndex},
+    {path: '/news', component: routerNews},
+    {path: '/product', component: routerProduct}
+  ];
+  //3创建VueRouter对象
+  var vueRouter = new VueRouter({
+    routes: routeList
+  });
+  var vm = new Vue({
+    el: '#app',
+    router: vueRouter,    //4声明当前vm对象使用的路由表
+    data: {}
+  })
+</script>
+</body>
+</html>

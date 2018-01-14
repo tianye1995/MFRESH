@@ -1,0 +1,20 @@
+{
+  "name": "mfresh_backend",
+  "version": "1.0.0",
+  "description": "MFRESH Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "node  ./test/test.js",
+    "start": "node  index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": "https://www.github.com/mfresh.git",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}

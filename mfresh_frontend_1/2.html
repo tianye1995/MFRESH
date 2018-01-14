@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <mf-header></mf-header>
+    <mf-main></mf-main>
+    <mf-footer></mf-footer>
+</div>
+
+<template id="template-main">
+    <div class="main">
+        <ul>
+            <li v-for="n in newsList">
+                <a :href="n.nid">{{n.title}}</a>
+        </ul>
+        <p>新闻来源：mfresh.com</p>
+    </div>
+</template>
+
+<template id="template-footer">
+    <div class="footer">
+        <hr>
+        <p>版权所有 MFRESH.COM 2017</p>
+    </div>
+</template>
+<script src="js/vue.js"></script>
+<script>
+  Vue.component('mf-header', {
+    template: `
+      <div class="header">
+        <h3>这里是页头</h3>
+        <hr>
+      </div>
+    `
+  });
+  Vue.component('mf-main', {
+    template: '#template-main',
+    data: function(){
+      return {
+        newsList: [
+          {nid: 20, title:'新闻标题-20'},
+          {nid: 19, title:'新闻标题-19'},
+          {nid: 18, title:'新闻标题-18'},
+          {nid: 17, title:'新闻标题-17'},
+          {nid: 16, title:'新闻标题-16'}
+        ]
+      }
+    }
+  });
+  Vue.component('mf-footer', {
+    template: '#template-footer'
+  });
+
+
+  var vm = new Vue({
+    el: '#app',
+    data: {}
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻列表</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mycss.css">
+</head>
+<body>
+<div id="app">
+    <mf-header></mf-header>
+    <mf-main></mf-main>
+    <mf-footer></mf-footer>
+</div>
+
+<template id="template-header">
+    <div class="header_box">
+        <header class="header container">
+            <h1 class="logo"><a href="index.html" class="link"></a></h1>
+            <div class="h_con">
+                <ul class="clearfloat">
+                    <li class="phone">4000-585-116</li>
+                    <li><a href="#">中文</a></li>
+                    <li><em>|</em></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#" class="weixin"></a></li>
+                    <li><a href="#" class="weibo"></a></li>
+                    <!--<li><a href="login.html" class="h_login">登录</a></li>-->
+                    <!--<li><em>|</em></li>-->
+                    <!--<li><a href="register.html" class="h_register">注册</a></li>-->
+                    <!--<li class="top_user"><a href="">admin</a></li>-->
+                    <!--<li class="top_quit"><a href="">退出</a></li>-->
+                </ul>
+                <div class="search clearfloat">
+                    <button type="button"></button>
+                    <input type="text"/>
+                </div>
+            </div>
+        </header>
+        <!--nav-->
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav">
+                    <ul>
+                        <li><a href="index.html"><span class="icon_home"></span>首页</a></li>
+                        <li><a href="about.html">关于净美仕</a></li>
+                        <li><a href="news.html">公司动态</a></li>
+                        <li class="nav_pd">
+                            <a href="product.html">产品中心<span class="icon_pd"></span></a>
+                            <div class="pd_dropdown">
+                                <a href="product.html?type=1">净美仕净化器</a>
+                                <a href="product.html?type=2">净美仕滤网</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="s_cart">
+                    <a href="cart.html">
+                        <span class="icon_cart"></span>购物车(<strong id="cart_sum">0</strong>)<span class="icon_sj"></span>
+                    </a>
+                    <div class="cart_dropdown">
+                        <!--<h3>您的购物车为空~</h3>-->
+                        <ul>
+                            <!--<li>-->
+                            <!--<a href=""><img src="product-imgs/jhq-m8088a.jpg" alt=""/></a>-->
+                            <!--<div>-->
+                            <!--<span>-</span><input type="text" value="2"/><span>+</span>-->
+                            <!--</div>-->
+                            <!--<strong>¥1599.00</strong>-->
+                            <!--<em></em>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                            <!--<a href=""><img src="product-imgs/jhq-m8088a.jpg" alt=""/></a>-->
+                            <!--<div>-->
+                            <!--<span>-</span><input type="text" value="2"/><span>+</span>-->
+                            <!--</div>-->
+                            <!--<strong>¥1599.00</strong>-->
+                            <!--<em></em>-->
+                            <!--</li>-->
+                        </ul>
+                        <div class="cd_js clearfloat">
+                            <span>共计：<strong>0.00</strong></span>
+                            <a href="#">结算</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</template>
+
+<template id="template-main">
+    <div>
+        <!--面包屑导航-->
+        <div class="breadcrumb">
+            <div class="container">
+                <h2>
+                    <a href="">首页</a>&gt;<a href="">公司动态</a>
+                </h2>
+            </div>
+        </div>
+        <!--页面主体-->
+        <div class="main container">
+            <div class="news">
+                <ul>
+                    <li><span>2016-02-21</span><a href="">空气净化器要逆天？ “玫瑰金”“土豪金”齐上阵</a></li>
+                    <li><span>2016-02-21</span><a href="">净美仕新风净化系统　助力校园新风行动</a></li>
+                    <li><span>2016-02-21</span><a href="">全国新风行动全面启动 助推净美仕战略升级</a></li>
+                    <li><span>2016-02-21</span><a href="">智能空气净化器翻盘：净美仕能否领衔?</a></li>
+                </ul>
+            </div>
+            <!-- 分页导航-->
+            <div class="pages">
+                <a href="" class="">上一页</a>
+                <a href="" class="cur">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">下一页</a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="template-footer">
+    <footer class="footer">
+        <div class="container">
+            <div class="f_con clearfloat">
+                <ul>
+                    <li>
+                        <h3>走进净美仕</h3>
+                        <a href="">公司简介</a>
+                        <a href="">净美仕精神</a>
+                        <a href="">品牌历程</a>
+                    </li>
+                    <li>
+                        <h3>成为合作伙伴</h3>
+                        <a href="">成为核心供应商</a>
+                        <a href="">电商经销入口</a>
+                        <a href="">成为线下代理商</a>
+                    </li>
+                    <li>
+                        <h3>售后服务</h3>
+                        <a href="">在线报修</a>
+                        <a href="">售后政策</a>
+                        <a href="">下载中心</a>
+                    </li>
+                    <li>
+                        <h3>加入净美仕</h3>
+                        <a href="">招聘贤才</a>
+                        <a href="">联系我们</a>
+                        <a href="">网站地图</a>
+                    </li>
+                </ul>
+                <span class="qrcode"></span>
+                <div class="kefu">
+                    <h4>4000-585-116</h4>
+                    <span>周一至周日9:00-18:00</span>
+                    <a href="#">金 牌 客 服</a>
+                </div>
+            </div>
+            <div class="copyright">
+                Copyright © 2014 Apple Inc 保留所有权利。使用条款|客户隐私政策        © 北京净美仕环境科技有限公司  京公安网安备 11010500896 | 京ICP备 12050755
+            </div>
+        </div>
+    </footer>
+</template>
+
+<script src="js/vue.js"></script>
+<script>
+  Vue.component('mf-header', {
+    template: '#template-header'
+  })
+  Vue.component('mf-main', {
+    template: '#template-main'
+  })
+  Vue.component('mf-footer', {
+    template: '#template-footer'
+  })
+
+  var vm = new Vue({
+    el: '#app',
+    data: {}
+  })
+</script>
+</body>
+</html>

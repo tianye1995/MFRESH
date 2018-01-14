@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h3>使用script方式引入Vue.js</h3>
+  <hr>
+  <!--View-->
+  <div id="app">
+    <p>欢迎回来：{{loginUname}}</p> 
+    <span>购物车({{productCount}})</span>
+    <button @click="addToCart()">添加到购物车</button>
+    <ul>
+      <li v-for="n in newsList">
+        <a :href="n.nid">{{n.title}}</a>
+        <span>{{n.pubTime | date}}</span>
+      </li>
+    </ul>
+  </div>
+  <script src="js/vue.js"></script>
+  <script>
+    //全局过滤器，把bigint转换为 yyyy-mm-dd hh:mm
+    Vue.filter('date', function(value){
+      let d = new Date(value);
+      return d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate() + ' ' + d.getHours()+':'+d.getMinutes();
+    });
+
+    //使用MVVM模型 —— 把数据和视图绑定，只要数据改变，视图会随之改变
+    var vm = new Vue({            //ViewModel
+      el: '#app',
+      data: {                     //Model
+        loginUname: 'dingding',
+        productCount: 8,
+        newsList:[
+          {nid:20,title:'新闻标题20',pubTime:1531234567890},
+          {nid:19,title:'新闻标题19',pubTime:1521234567890},
+          {nid:18,title:'新闻标题18',pubTime:1511234567890}
+        ]
+      },
+      methods: {
+        addToCart: function(){
+          this.productCount++;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

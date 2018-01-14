@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <mf-main></mf-main>
+</div>
+<script src="js/vue.js"></script>
+<script>
+  //子组件对象
+  var childBreadcrumb = {
+    template: '<div>首页 > 公司动态</div>'
+  };
+  var childNewsList = {
+    template: '<ul><li>新闻1</li><li>新闻2</li><li>新闻3</li></ul>'
+  };
+  var childNav = {
+    template: '<ul><li>1</li><li>2</li><li>3</li></ul>'
+  }
+  //父组件对象
+  Vue.component('mf-main', {
+    components: {
+        'child-breadcrumb': childBreadcrumb,
+        'child-newslist': childNewsList,
+        'child-nav': childNav
+    },
+    template: `
+      <div>
+        <child-breadcrumb></child-breadcrumb>
+        <hr>
+        <child-newslist></child-newslist>
+        <child-nav></child-nav>
+        <hr>
+        <child-breadcrumb></child-breadcrumb>
+     </div>
+    `
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {}
+  })
+</script>
+</body>
+</html>
